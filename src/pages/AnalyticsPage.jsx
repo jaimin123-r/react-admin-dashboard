@@ -15,16 +15,16 @@ const AnalyticsPage = () => {
 
 			<main className='max-w-7xl mx-auto py-6 px-4 lg:px-8'>
 				<OverviewCards />
-				<RevenueChart />
+				{/* <RevenueChart /> */}
 
-				<div className='grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8'>
+				{/* <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8'>
 					<ChannelPerformance />
 					<ProductPerformance />
 					<UserRetention />
 					<CustomerSegmentation />
-				</div>
+				</div> */}
 
-				<AIPoweredInsights />
+				{/* <AIPoweredInsights /> */}
 			</main>
 		</div>
 	);

@@ -4,13 +4,17 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 const COLORS = ["#6366F1", "#8B5CF6", "#EC4899", "#10B981", "#F59E0B"];
 
 const SALES_CHANNEL_DATA = [
-	{ name: "Website", value: 45600 },
-	{ name: "Mobile App", value: 38200 },
-	{ name: "Marketplace", value: 29800 },
-	{ name: "Social Media", value: 18700 },
+	{ name: "Navrangpura", value: 300 },
+	{ name: "Thaltej", value: 277 },
+	{ name: "Prahladnagar", value: 367 },
+	{ name: "Iscon Cross Road", value: 249 },
+	{ name: "Juhapura", value: 145 },
+	{ name: "Bapunagar", value: 175 },
+	{ name: "Vastrapur", value: 300 },
+	{ name: "Memnagar", value: 138 },
 ];
 
-const SalesChannelChart = () => {
+const Towing_channelChart = () => {
 	return (
 		<motion.div
 			className='bg-gray-800 bg-opacity-50 backdrop-blur-md shadow-lg rounded-xl p-6 lg:col-span-2 border border-gray-700'
@@ -18,7 +22,7 @@ const SalesChannelChart = () => {
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ delay: 0.4 }}
 		>
-			<h2 className='text-lg font-medium mb-4 text-gray-100'>Sales by Channel</h2>
+			<h2 className='text-lg font-medium mb-4 text-gray-100'>Towing by Area</h2>
 
 			<div className='h-80'>
 				<ResponsiveContainer>
@@ -45,4 +49,4 @@ const SalesChannelChart = () => {
 		</motion.div>
 	);
 };
-export default SalesChannelChart;
+export default Towing_channelChart;

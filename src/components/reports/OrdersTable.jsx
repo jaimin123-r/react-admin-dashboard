@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Search, Eye } from "lucide-react";
+import { Search, Eye ,Download } from "lucide-react";
 
 const orderData = [
 	{ id: "ORD001", customer: "John Doe", total: 235.4, status: "Delivered", date: "2023-07-01" },
@@ -34,7 +34,7 @@ const OrdersTable = () => {
 			transition={{ delay: 0.4 }}
 		>
 			<div className='flex justify-between items-center mb-6'>
-				<h2 className='text-xl font-semibold text-gray-100'>Order List</h2>
+				<h2 className='text-xl font-semibold text-gray-100'>Reports List</h2>
 				<div className='relative'>
 					<input
 						type='text'
@@ -106,8 +106,9 @@ const OrdersTable = () => {
 								</td>
 								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>{order.date}</td>
 								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
-									<button className='text-indigo-400 hover:text-indigo-300 mr-2'>
+									<button className='text-indigo-400 hover:text-indigo-300 mr-2 flex'>
 										<Eye size={18} />
+										<Download size={18} className="ml-2"/>
 									</button>
 								</td>
 							</motion.tr>

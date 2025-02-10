@@ -3,21 +3,20 @@ import { motion } from "framer-motion";
 import Header from "../components/common/Header";
 import StatCard from "../components/common/StatCard";
 import { CreditCard, DollarSign, ShoppingCart, TrendingUp } from "lucide-react";
-import SalesOverviewChart from "../components/sales/SalesOverviewChart";
-import SalesByCategoryChart from "../components/sales/SalesByCategoryChart";
-import DailySalesTrend from "../components/sales/DailySalesTrend";
+import ComplaintsOverviewChart from "../components/complaint/ComplaintsOverviewChart";
+import ComplaintsByCategoryChart from "../components/complaint/ComplaintsByCategoryChart";
+import DailyComplaintsTrend from "../components/complaint/DailyComplaintsTrend";
 
 const salesStats = {
-	totalRevenue: "$1,234,567",
-	averageOrderValue: "$78.90",
-	conversionRate: "3.45%",
-	salesGrowth: "12.3%",
+	totalcomplaint: "120",
+	pendingcomplaint: "48",
+	completedcomplaint: "72",
 };
 
-const SalesPage = () => {
+const ComplaintPage = () => {
 	return (
 		<div className='flex-1 overflow-auto relative z-10'>
-			<Header title='Sales Dashboard' />
+			<Header title='Complaints' />
 
 			<main className='max-w-7xl mx-auto py-6 px-4 lg:px-8'>
 				{/* SALES STATS */}
@@ -27,30 +26,30 @@ const SalesPage = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 1 }}
 				>
-					<StatCard name='Total Revenue' icon={DollarSign} value={salesStats.totalRevenue} color='#6366F1' />
+					<StatCard name='Total Compalaints' icon={DollarSign} value={salesStats.totalcomplaint} color='#6366F1' />
 					<StatCard
-						name='Avg. Order Value'
+						name='Pending Compalaints'
 						icon={ShoppingCart}
-						value={salesStats.averageOrderValue}
+						value={salesStats.pendingcomplaint}
 						color='#10B981'
 					/>
 					<StatCard
-						name='Conversion Rate'
+						name='Completed Compalaints'
 						icon={TrendingUp}
-						value={salesStats.conversionRate}
+						value={salesStats.completedcomplaint}
 						color='#F59E0B'
 					/>
 					<StatCard name='Sales Growth' icon={CreditCard} value={salesStats.salesGrowth} color='#EF4444' />
 				</motion.div>
 
-				<SalesOverviewChart />
+				<ComplaintsOverviewChart />
 
 				<div className='grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8'>
-					<SalesByCategoryChart />
-					<DailySalesTrend />
+					<ComplaintsByCategoryChart />
+					<DailyComplaintsTrend />
 				</div>
 			</main>
 		</div>
 	);
 };
-export default SalesPage;
+export default ComplaintPage;

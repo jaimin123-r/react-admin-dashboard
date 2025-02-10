@@ -9,9 +9,9 @@ import UserActivityHeatmap from "../components/users/UserActivityHeatmap";
 import UserDemographicsChart from "../components/users/UserDemographicsChart";
 
 const userStats = {
-	totalUsers: 152845,
+	totalUsers: 2500,
 	newUsersToday: 243,
-	activeUsers: 98520,
+	activeUsers: 130,
 	churnRate: "2.4%",
 };
 
@@ -46,7 +46,7 @@ const UsersPage = () => {
 
 				<UsersTable />
 
-				{/* USER CHARTS */}
+				USER CHARTS
 				<div className='grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8'>
 					<UserGrowthChart />
 					<UserActivityHeatmap />

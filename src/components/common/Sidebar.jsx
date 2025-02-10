@@ -1,7 +1,10 @@
-import { BarChart2, DollarSign, Menu, Settings, ShoppingBag, ShoppingCart, TrendingUp, Users } from "lucide-react";
+import { BarChart2, Menu, Settings, TrendingUp, Users,ChartLine } from "lucide-react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { GiPoliceOfficerHead } from "react-icons/gi";
+import { BsPersonFillExclamation } from "react-icons/bs";
+import { TbReportSearch } from "react-icons/tb";
 
 const SIDEBAR_ITEMS = [
 	{
@@ -10,11 +13,11 @@ const SIDEBAR_ITEMS = [
 		color: "#6366f1",
 		href: "/",
 	},
-	{ name: "Products", icon: ShoppingBag, color: "#8B5CF6", href: "/products" },
+	{ name: "Officers", icon: GiPoliceOfficerHead, color: "#8B5CF6", href: "/officers" },
 	{ name: "Users", icon: Users, color: "#EC4899", href: "/users" },
-	{ name: "Sales", icon: DollarSign, color: "#10B981", href: "/sales" },
-	{ name: "Orders", icon: ShoppingCart, color: "#F59E0B", href: "/orders" },
-	{ name: "Analytics", icon: TrendingUp, color: "#3B82F6", href: "/analytics" },
+	{ name: "Complaints", icon: BsPersonFillExclamation, color: "#10B981", href: "/complaints" },
+	{ name: "Reports", icon: TbReportSearch, color: "#F59E0B", href: "/reports" },
+	{ name: "Analytics", icon: ChartLine, color: "#3B82F6", href: "/analytics" },
 	{ name: "Settings", icon: Settings, color: "#6EE7B7", href: "/settings" },
 ];
 
@@ -23,10 +26,10 @@ const Sidebar = () => {
 
 	return (
 		<motion.div
-			className={`relative z-10 transition-all duration-300 ease-in-out flex-shrink-0 ${
-				isSidebarOpen ? "w-64" : "w-20"
+			className={`relative z-10 transition-all duration-100 ease-in-out flex-shrink-0 ${
+				isSidebarOpen ? "w-40" : "w-20"
 			}`}
-			animate={{ width: isSidebarOpen ? 256 : 80 }}
+			animate={{ width: isSidebarOpen ? 220 : 80 }}
 		>
 			<div className='h-full bg-gray-800 bg-opacity-50 backdrop-blur-md p-4 flex flex-col border-r border-gray-700'>
 				<motion.button
@@ -42,11 +45,11 @@ const Sidebar = () => {
 					{SIDEBAR_ITEMS.map((item) => (
 						<Link key={item.href} to={item.href}>
 							<motion.div className='flex items-center p-4 text-sm font-medium rounded-lg hover:bg-gray-700 transition-colors mb-2'>
-								<item.icon size={20} style={{ color: item.color, minWidth: "20px" }} />
+								<item.icon size={25} style={{ color: item.color, minWidth: "20px" }} />
 								<AnimatePresence>
 									{isSidebarOpen && (
 										<motion.span
-											className='ml-4 whitespace-nowrap'
+											className='ml-4 whitespace-nowrap text-lg'
 											initial={{ opacity: 0, width: 0 }}
 											animate={{ opacity: 1, width: "auto" }}
 											exit={{ opacity: 0, width: 0 }}

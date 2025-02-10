@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { IndianRupee, Users, Eye, ArrowDownRight, ArrowUpRight } from "lucide-react";
 
 const overviewData = [
-	{ name: "Revenue", value: "Rs.1,234,567", change: 12.5, icon: IndianRupee },
+	{ name: "Revenue", value: "1,23,000", change: 12.5, icon: IndianRupee },
 	{ name: "Users", value: "45,678", change: 8.3, icon: Users },
 	{ name: "Complaints", value: "9,876", change: -3.2, icon: ArrowUpRight },
 ];

@@ -1,5 +1,7 @@
-import { Moon, Sun, CircleUserRound } from "lucide-react";
+import { Moon, Sun, CircleUserRound, ChevronDown, Bell, User, LogOut } from "lucide-react";
 import React, { useState } from "react";
+// import { Menu, MenuItem, Button } from "@/components/ui/button";
+
 
 const Header = ({ title }) => {
   const [isSunMode, setIsSunMode] = useState(true);
@@ -29,9 +31,11 @@ const Header = ({ title }) => {
           <button className="flex items-center p-2 bg-gray-600 rounded-xl hover:bg-gray-300 transition">
             <CircleUserRound className="text-slate-950 w-7 h-7 "/>
           </button>
+        
         </div>
       </div>
     </header>
   );
 };
 export default Header;
+

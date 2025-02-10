@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 import Header from "../components/common/Header";
 import StatCard from "../components/common/StatCard";
-import { CreditCard, DollarSign, ShoppingCart, TrendingUp } from "lucide-react";
+import { CreditCard, ShoppingCart, ShovelIcon, TrendingUp } from "lucide-react";
 import ComplaintsOverviewChart from "../components/complaint/ComplaintsOverviewChart";
 import ComplaintsByCategoryChart from "../components/complaint/ComplaintsByCategoryChart";
 import DailyComplaintsTrend from "../components/complaint/DailyComplaintsTrend";
@@ -26,7 +26,7 @@ const ComplaintPage = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 1 }}
 				>
-					<StatCard name='Total Compalaints' icon={DollarSign} value={salesStats.totalcomplaint} color='#6366F1' />
+					<StatCard name='Total Compalaints' icon={ShovelIcon} value={salesStats.totalcomplaint} color='#6366F1' />
 					<StatCard
 						name='Pending Compalaints'
 						icon={ShoppingCart}

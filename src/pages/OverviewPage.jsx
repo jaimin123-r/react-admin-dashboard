@@ -7,6 +7,11 @@ import CategoryDistributionChart from "../components/overview/CategoryDistributi
 import Towing_channelChart from "../components/overview/Towing_channelChart";
 
 const OverviewPage = () => {
+	let totalTowedVehicles = 245;
+	let newComplaints = 15;
+	let totalIncome = 45000;
+	let workingTowTrucks = 19;
+	
 	const towImage = '/Images/tow-truck.png'
 	return (
 		<div className='flex-1 overflow-auto relative z-10'>
@@ -19,10 +24,10 @@ const OverviewPage = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 1 }}
 				>
-					<StatCard name='Total Towed Vehicles ' icon={Zap} value='244' color='#6366F1' />
-					<StatCard name='New Complaints' icon={Users} value='15' color='#8B5CF6' />
-					<StatCard name='Total Income' icon={IndianRupee } value='Rs.45000' color='#EC4899' />
-					<StatCard name='Working Tow Trucks' icon={BarChart2} value='19' color='#10B981' />
+					<StatCard name='Total Towed Vehicles ' icon={Zap} value={totalTowedVehicles} color='#6366F1' />
+					<StatCard name='New Complaints' icon={Users} value={newComplaints} color='#8B5CF6' />
+					<StatCard name='Total Income' icon={IndianRupee } value={totalIncome} color='#EC4899' />
+					<StatCard name='Working Tow Trucks' icon={BarChart2} value={workingTowTrucks} color='#10B981' />
 				</motion.div>
 
 				{/* CHARTS */}

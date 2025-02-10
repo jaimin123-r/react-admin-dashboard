@@ -11,7 +11,7 @@ const orderStats = {
 	totalreports: "90",
 	pendingOrders: "56",
 	completedOrders: "1,178",
-	totalRevenue: "Rs.98,765",
+	totalRevenue: "98,765",
 };
 
 const ReportsPage = () => {

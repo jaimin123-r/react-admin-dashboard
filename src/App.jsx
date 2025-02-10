@@ -10,6 +10,7 @@ import ComplaintPage from "./pages/ComplaintPage";
 import ReportsPage from "./pages/ReportsPage";
 import AnalyticsPage from "./pages/AnalyticsPage";
 import SettingsPage from "./pages/SettingsPage";
+import AddOfficer from "./components/officer/AddOfficer";
 
 function App() {
 	const [isAuthenticated, setIsAuthenticated] = useState(true);
@@ -60,6 +61,7 @@ function App() {
 					<>
 						<Route path="/" element={<OverviewPage />} />
 						<Route path="/officers" element={<OfficerPage />} />
+						<Route path="/add-officer" element={<AddOfficer />} />
 						<Route path="/users" element={<UsersPage />} />
 						<Route path="/complaints" element={<ComplaintPage />} />
 						<Route path="/reports" element={<ReportsPage />} />

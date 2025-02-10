@@ -19,7 +19,7 @@ const OfficerPage = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 1 }}
 				>
-					<StatCard name='Total Officers' icon={GiPoliceOfficerHead} value={18} color='#6366F1' />
+					<StatCard name='Total Officers' icon={GiPoliceOfficerHead} value={3} color='#6366F1' />
 					<StatCard name='Total Area' icon={MapPinned} value={22} color='#10B981' />
 					{/* <StatCard name='Low Stock' icon={AlertTriangle} value={23} color='#F59E0B' /> */}
 					{/* <StatCard name='Total Revenue' icon={DollarSign} value={"$543,210"} color='#EF4444' /> */}

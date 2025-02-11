@@ -3,71 +3,37 @@ import { Edit, Search, Trash2 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const PRODUCT_DATA = [
-  {
-    id: 1,
-    name: "Jatinbhai Patel",
-    email: "example@gmail.com",
-    Badge_Number: "1234",
-    Area: "Maninagar",
-    createdAt: "9/9/2000",
-  },
-  {
-    id: 2,
-    name: "Rameshbhai Gupta ",
-    email: "example@gmail.com",
-    Badge_Number: "4567",
-    Area: "Prahladnagae",
-    createdAt: "9/9/2000",
-  },
-  {
-    id: 3,
-    name: "Harshbhai Soni",
-    email: "example@gmail.com",
-    Badge_Number: "1234",
-    Area: "Satelite",
-    createdAt: "9/9/2000",
-  },
-  {
-    id: 4,
-    name: "Het Raghani",
-    email: "example@gmail.com",
-    Badge_Number: "9845",
-    Area: "Navrangpura",
-    createdAt: "9/9/2000",
-  },
-  {
-    id: 5,
-    name: "Pankajbhai Patel",
-    email: "example@gmail.com",
-    Badge_Number: "5241",
-    Area: "Juhapura",
-    createdAt: "9/9/2000",
-  },
-];
-
 const OfficerTable = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [searchOfficer, setsearchOfficer] = useState("");
+  const [Officer, setOfficer] = useState([]);
 
   const handleSearch = (e) => {
     const term = e.target.value.toLowerCase();
-    setSearchTerm(term);
-    const filtered = PRODUCT_DATA.filter(
-      (product) =>
-        product.name.toLowerCase().includes(term) ||
-        product.Area.toLowerCase().includes(term)
+    setsearchOfficer(term);
+    const filtered = Officer.filter(
+      (officer) =>
+        officer.name.toLowerCase().includes(term) ||
+        officer.area.toLowerCase().includes(term)
     );
 
-    setFilteredProducts(filtered);
+    setOfficer(filtered);
+    if(term === '') fetch("http://localhost:3000/api/officer/search")
+      .then((result) => result.json())
+      .then((data) => {
+        setOfficer(data.message);
+        // console.log("API Response:", data.message.length);
+      })
+      .catch((error) => {
+        console.error("Error fetching challans:", error);
+      });
   };
 
   useEffect(() => {
     fetch("http://localhost:3000/api/officer/search")
       .then((result) => result.json())
       .then((data) => {
-        setFilteredProducts(data.message);
-        // console.log("API Response:", data.message);
+        setOfficer(data.message);
+        console.log("API Response:", data.message.length);
       })
       .catch((error) => {
         console.error("Error fetching challans:", error);
@@ -89,7 +55,7 @@ const OfficerTable = () => {
             placeholder="Search products..."
             className="bg-gray-700 text-white placeholder-gray-400 rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             onChange={handleSearch}
-            value={searchTerm}
+            value={searchOfficer}
           />
           <Search className="absolute left-3 top-2.5 text-gray-400" size={18} />
           <Link
@@ -127,7 +93,7 @@ const OfficerTable = () => {
           </thead>
 
           <tbody className="divide-y divide-gray-700">
-            {filteredProducts.map((product) => (
+            {Officer.map((product) => (
               <motion.tr
                 key={product.id}
                 initial={{ opacity: 0 }}

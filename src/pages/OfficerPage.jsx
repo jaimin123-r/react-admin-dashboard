@@ -6,6 +6,27 @@ import StatCard from "../components/common/StatCard";
 import { MapPinned } from "lucide-react";
 import { GiPoliceOfficerHead } from "react-icons/gi";
 import OfficerTable from "../components/officer/OfficerTable";
+// import AddOfficer from "../components/officer/AddOfficer";
+
+// const handleSearch = (e) => {
+// 	const term = e.target.value.toLowerCase();
+// 	setsearchOfficer(term);
+// 	const filtered = Officer.filter(
+// 		(officer) =>
+// 			officer.name.toLowerCase().includes(term) ||
+// 			officer.area.toLowerCase().includes(term)
+// 	);
+// 	setOfficer(filtered);
+// 	if (term === "") fetch("http://localhost:3000/api/officer/search")
+// 		.then((result) => result.json())
+// 		.then((data) => {
+// 			setOfficer(data.message);
+// 			// console.log("API Response:", data.message.length);
+// 		})
+// 		.catch((error) => {
+// 			console.error("Error fetching challans:", error);
+// 		});
+// };
 
 const OfficerPage = () => {
 	return (
@@ -25,6 +46,7 @@ const OfficerPage = () => {
 					{/* <StatCard name='Total Revenue' icon={DollarSign} value={"$543,210"} color='#EF4444' /> */}
 				</motion.div>
 
+				{/* <AddOfficer /> */}
 				<OfficerTable />
 			</main>
 		</div>
